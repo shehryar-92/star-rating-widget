@@ -1,0 +1,139 @@
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+/* Theme toggle */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-family: inherit;
+  padding: 4px;
+}
+
+.theme-toggle-track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 0.15s ease;
+}
+
+.theme-toggle[aria-checked="true"] .theme-toggle-track {
+  background: var(--accent);
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--surface);
+  transition: transform 0.15s ease;
+}
+
+.theme-toggle[aria-checked="true"] .theme-toggle-thumb {
+  transform: translateX(16px);
+}
+
+/* Star rating widget */
+
+.star-rating-widget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.star-rating-label {
+  font-size: 15px;
+  color: var(--text);
+  flex: 1;
+  text-align: left;
+}
+
+.star-rating-stars {
+  display: flex;
+  gap: 2px;
+  border-radius: 6px;
+  outline-offset: 4px;
+}
+
+.star-rating-stars:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+.star-rating-value {
+  font-size: 13px;
+  color: var(--text-muted);
+  min-width: 34px;
+  text-align: right;
+}
+
+.star-rating-max {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.star-outline,
+.star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.star-outline path {
+  fill: var(--star-empty);
+}
+
+.star-fill path {
+  fill: var(--accent);
+  transition: clip-path 0.1s ease;
+}
